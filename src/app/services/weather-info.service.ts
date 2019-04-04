@@ -1,19 +1,22 @@
-import { Injectable } from "@angular/core";
-import { WeatherLocation } from "../models/weather-location";
-import { WeatherInfo } from "../models/weather-info";
+import {Injectable} from '@angular/core';
+import {WeatherLocation} from '../models/weather-location';
+import {WeatherInfo} from '../models/weather-info';
+
 @Injectable()
 export class WeatherInfoService {
-  constructor() {}
+  constructor() {
+  }
+
   findCurrentWeather(
     location: WeatherLocation,
     cb: (err: Error, info: WeatherInfo) => void
   ): void {
     console.log(`findCurrentWeather(${location.name})`);
-    let info = {
+    const info = {
       ts: Date.now(),
-      desc: "scattered clouds",
-      icon: "09d",
-      temp: 13, //main.temp
+      desc: 'scattered clouds',
+      icon: '09d',
+      temp: 13, // main.temp
       temp_max: 13, // main.temp_max
       temp_min: 13, // main.temp_min
       clouds: 75, // clouds.all
@@ -23,6 +26,7 @@ export class WeatherInfoService {
     };
     cb(null, info);
   }
+
   findForecast(
     location: WeatherLocation,
     ini: number,
@@ -31,10 +35,13 @@ export class WeatherInfoService {
   ): void {
     console.log(`findForecast(${location.name},${ini},${end})`);
     this.findCurrentWeather(location, (err, info) => {
-      if (err) cb(err, null);
-      else {
-        let forecast: WeatherInfo[] = [];
-        for (let i = 0; i < 6; i++) forecast.push(info);
+      if (err) {
+        cb(err, null);
+      } else {
+        const forecast: WeatherInfo[] = [];
+        for (let i = 0; i < 6; i++) {
+          forecast.push(info);
+        }
         cb(null, forecast);
       }
     });

@@ -1,8 +1,29 @@
-<mat-toolbar color="primary">
-  <span class="example-fill-remaining-space"></span>
-  <span>My Weather</span>
-  <span class="example-fill-remaining-space"></span>
-  <button mat-button>
+<mat-toolbar color="primary"><span class="example-fill-remaining-space"></span> <span>My Weather</span> <span
+  class="example-fill-remaining-space"></span>
+  <button mat-button (click)="addLocation()">
     <mat-icon>add</mat-icon>
   </button>
 </mat-toolbar>
+<app-weather-card [location]="location" (removed)="removeLocation($event)" ngFor="let location of storeService.listLocations()">
+</app-weather-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{location.name}}</mat-card-title>
+    <mat-card-subtitle>{{location.country}}</mat-card-subtitle>
+    <div>
+      <button mat-icon-button>
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-card-content><span>5ºC</span>
+    <img src="http://openweathermap.org/img/w/01d.png">
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>MORE</button>
+    <button mat-button>FORECAST</button>
+  </mat-card-actions>
+</mat-card>

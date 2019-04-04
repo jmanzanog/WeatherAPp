@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
-import { WeatherLocation } from '../models/weather-location';
+import {Injectable} from '@angular/core';
+import {WeatherLocation} from '../models/weather-location';
 
 
 @Injectable()
 export class WeatherLocationService {
 
-  constructor() { }
+  constructor() {
+  }
 
   findLocation(desc: string, cb: (err: Error, locations: WeatherLocation[]) => void): void {
     console.log(`[WeatherLocationService] findLocation(${desc}`);
-    let location = {
+    const location = {
       id: 100,
       lat: 38.71,
       lon: -0.47,
