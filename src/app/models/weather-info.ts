@@ -1,5 +1,5 @@
 export interface WeatherInfo {
-  ts: number; // tiempo de adquisición (milisegundos)
+  ts: string; // tiempo de adquisición (milisegundos)
   desc?: string; // descripción tiempo
   icon?: string; // icono para tiempo
   temp: number; // temperatura
