@@ -11,7 +11,15 @@ export class StoreService {
       lat: 38.71,
       lon: -0.47,
       name: 'Alcoy',
-      country: 'ES'
+      country: 'ES',
+      temp: '',
+      tempmax: '',
+      tempmin: '',
+      humidity: '',
+      pressure: '',
+      wind: '',
+      icon: '',
+      clouds: '',
     });
   }
 
