@@ -13,7 +13,7 @@ export class WeatherInfoService {
   ): void {
     console.log(`findCurrentWeather(${location.name})`);
     const info = {
-      ts: Date.now(),
+      ts: Date.now().toString(),
       desc: 'scattered clouds',
       icon: '09d',
       temp: 13, // main.temp
