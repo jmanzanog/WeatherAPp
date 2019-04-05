@@ -14,6 +14,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {WeatherCardComponent} from './components/weather-card/weather-card.component';
 import {MatCardModule} from '@angular/material/card';
+import {FormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,7 @@ import {MatCardModule} from '@angular/material/card';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: 'dashboard', component: DashboardComponent},
       {path: 'search', component: SearchLocationComponent},
@@ -36,7 +42,11 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatListModule
   ],
   providers: [WeatherInfoService, WeatherLocationService, StoreService],
   bootstrap: [AppComponent]
