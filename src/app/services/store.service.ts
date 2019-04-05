@@ -6,7 +6,7 @@ export class StoreService {
   private locations: WeatherLocation[] = [];
 
   constructor() {
-    this.locations.push({
+    /*this.locations.push({
       id: 2522098,
       lat: 38.71,
       lon: -0.47,
@@ -20,7 +20,7 @@ export class StoreService {
       wind: '',
       icon: '',
       clouds: '',
-    });
+    });*/
   }
 
   addLocation(location: WeatherLocation): void {

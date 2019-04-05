@@ -14,16 +14,15 @@ export class WeatherCardComponent implements OnInit {
   private location: WeatherLocation;
   @Output()
   private removed = new EventEmitter();
-  private info: WeatherInfo;
 
   constructor(private weatherInfoService: WeatherInfoService, private router: Router) {
   }
 
   refresh() {
     console.log('[WeatherCardComponent] refresh()');
-    this.weatherInfoService.findCurrentWeather(this.location, (err, info) => {
+    /*this.weatherInfoService.findCurrentWeather(this.location, (err, info) => {
       this.info = info;
-    });
+    });*/
   }
 
   remove() {
