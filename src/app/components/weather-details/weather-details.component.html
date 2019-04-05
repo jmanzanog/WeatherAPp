@@ -1,3 +1,38 @@
-<p>
-  weather-details works!
-</p>
+<mat-toolbar color="primary">
+
+  <span class="example-fill-remaining-space"></span>
+  <span>Weather details</span>
+  <span class="example-fill-remaining-space"></span>
+  <button mat-button (click)="back()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{locations[0].name}}</mat-card-title>
+    <mat-card-subtitle>{{locations[0].country}}</mat-card-subtitle>
+    <div>
+      <button mat-icon-button (click)="refresh()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div style="font-size: xx-small">
+      <p style="color: red"> {{locations[0].tempmax}} °C</p>
+      <p style="color: blue">{{locations[0].tempmin}} °C</p>
+    </div>
+    <span>{{locations[0].temp}}ºC</span>
+    <img [src]="'http://openweathermap.org/img/w/' + locations[0].icon + '.png'">
+  </mat-card-content>
+  <mat-card-content class="mat-card-content2">
+    <mat-card-subtitle>HUMIDITY: {{locations[0].humidity}}</mat-card-subtitle>
+    <mat-card-subtitle>CLOUDS: {{locations[0].clouds}} %</mat-card-subtitle>
+    <mat-card-subtitle>PRESSURE: {{locations[0].pressure}} hPa</mat-card-subtitle>
+    <mat-card-subtitle>WIND: {{locations[0].wind}} km/h</mat-card-subtitle>
+  </mat-card-content>
+
+
+</mat-card>
+

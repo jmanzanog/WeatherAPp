@@ -7,7 +7,7 @@ export class StoreService {
 
   constructor() {
     this.locations.push({
-      id: 100,
+      id: 2522098,
       lat: 38.71,
       lon: -0.47,
       name: 'Alcoy',

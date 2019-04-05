@@ -19,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [WeatherInfoService, WeatherLocationService, StoreService],
   bootstrap: [AppComponent]
